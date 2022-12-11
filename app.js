@@ -38,9 +38,12 @@ async function sendMail(messagePayload, callback) {
   const mailOptions = {
     from: 'tdelamaterthrowaway@gmail.com',
     to: 'tdelamater@gmail.com',
-    subject: `mistythicket.xzy message from: ${messagePayload.name}`,
-    html: `<h1>Message from ${messagePayload.name}</h1><br>
-      <h4>Message: ${messagePayload.message}</h4>`
+    subject: `MistyThicketMail: ${messagePayload.subject}`,
+    html: `<h2>Message from online form at mistythicket.xyz</h2><br/>
+      <h3>Name: ${messagePayload.name}</h3><br/>
+      <h3>Subject: ${messagePayload.subject}</h3><br/>
+      <h3>From: ${messagePayload.email}</h3><br/>
+      <h3>Message: ${messagePayload.message}</h3>`
   };
 
   transporter.sendMail(mailOptions, function(error, info){
