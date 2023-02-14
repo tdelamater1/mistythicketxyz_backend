@@ -6,6 +6,7 @@ const details = require("./details.json");
 
 const app = express();
 app.use(cors());
+app.options('*', cors());
 app.use(bodyParser.json());
 
 app.listen(3000, () => {
